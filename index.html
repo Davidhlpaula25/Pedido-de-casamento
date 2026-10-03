@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#16080d" />
+  <title>Para Karolliny ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main id="app">
+    <section class="screen active intro" data-screen="intro">
+      <div class="ambient"></div>
+      <div class="card intro-card">
+        <div class="tiny-heart">♥</div>
+        <p class="eyebrow">Karolliny Vieira Santos</p>
+        <h1>Tenho uma pergunta muito importante para você...</h1>
+        <p class="muted">Mas dessa vez você vai ter que ter um pouquinho de paciência 😏</p>
+        <button class="primary" data-go="tease">Continuar <span>→</span></button>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="tease">
+      <div class="question-wrap">
+        <p class="eyebrow">Antes de qualquer coisa...</p>
+        <h2>Karolliny, quer casar comigo? 💍</h2>
+        <p id="teaseMsg" class="muted">Você vive me intimando pra casar, né? Então tenta clicar 😂</p>
+        <div class="buttons-stage" id="teaseStage">
+          <button id="runawayYes" class="primary yes-btn">SIM ❤️</button>
+          <button id="fakeNo" class="secondary">Não</button>
+        </div>
+        <button id="unlockStory" class="ghost hidden">Tá bom, eu deixo você continuar 😌 →</button>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="story">
+      <div class="story-shell">
+        <div class="progress"><span id="progressBar"></span></div>
+        <div class="story-card">
+          <div class="photo-wrap"><img id="storyPhoto" src="assets/foto-01.jpeg" alt="Foto do casal"></div>
+          <div class="story-copy">
+            <p id="storyKicker" class="eyebrow">Nossa história</p>
+            <h2 id="storyTitle">Desde o começo...</h2>
+            <p id="storyText">Entre risadas, fases boas, desafios e tantas memórias, a gente foi construindo uma história que é só nossa.</p>
+          </div>
+        </div>
+        <div class="story-nav">
+          <button id="prevStory" class="secondary small">←</button>
+          <div id="storyDots" class="dots"></div>
+          <button id="nextStory" class="primary small">→</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="pause">
+      <div class="card pause-card">
+        <div class="tiny-heart">♥</div>
+        <p class="eyebrow">Chegou a hora</p>
+        <h2>Depois de tudo o que vivemos...</h2>
+        <p>de todas as risadas, dos momentos difíceis, das fases malucas e da família que construímos...</p>
+        <h3>Tem uma pergunta que eu quero fazer do jeito certo.</h3>
+        <button class="primary" data-go="proposal">Pode perguntar ❤️</button>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="proposal">
+      <div class="question-wrap proposal-wrap">
+        <p class="eyebrow">Agora é pra valer...</p>
+        <h2>Karolliny Vieira Santos,<br><span>quer casar comigo?</span> 💍❤️</h2>
+        <p id="proposalMsg" class="muted">Dessa vez o SIM funciona. O outro botão... já não garanto 😂</p>
+        <div class="buttons-stage final-stage" id="proposalStage">
+          <button id="finalYes" class="primary yes-btn big">SIM ❤️</button>
+          <button id="runawayNo" class="secondary no-btn">Não</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="yes">
+      <div id="confetti" class="confetti"></div>
+      <div class="yes-content">
+        <div class="ring">💍</div>
+        <p class="eyebrow">Você disse SIM!</p>
+        <h2>Demorou, hein? 😂❤️</h2>
+        <p>Agora é oficial. Eu quero continuar construindo a nossa vida, nossa família e todas as próximas memórias com você.</p>
+        <div class="final-photo"><img src="assets/foto-09.jpeg" alt="Nossa família"></div>
+        <div class="look-at-me">Agora olha pra mim... ❤️</div>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
