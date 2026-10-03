@@ -14,13 +14,14 @@ const teaseLines=[
   'Tá bom... antes de responder, quero te mostrar uma coisa ❤️'
 ];
 let teaseCount=0;
+const escapesBeforeUnlock=10;
 function moveButton(btn,stage){
   const pad=14, maxX=stage.clientWidth-btn.offsetWidth-pad*2, maxY=stage.clientHeight-btn.offsetHeight-pad*2;
   btn.style.left=`${pad+Math.max(0,Math.random()*maxX)}px`;
   btn.style.top=`${pad+Math.max(0,Math.random()*maxY)}px`;
   btn.style.transform='none';
 }
-function teaseEscape(e){e.preventDefault();moveButton(runawayYes,teaseStage);teaseMsg.textContent=teaseLines[Math.min(teaseCount,teaseLines.length-1)];teaseCount++;if(teaseCount>=5){runawayYes.classList.add('hidden');document.getElementById('fakeNo').classList.add('hidden');unlockStory.classList.remove('hidden');}}
+function teaseEscape(e){e.preventDefault();moveButton(runawayYes,teaseStage);teaseMsg.textContent=teaseLines[Math.min(teaseCount,teaseLines.length-1)];teaseCount++;if(teaseCount>=escapesBeforeUnlock){runawayYes.classList.add('hidden');document.getElementById('fakeNo').classList.add('hidden');unlockStory.classList.remove('hidden');}}
 ['pointerenter','pointerdown','touchstart'].forEach(ev=>runawayYes.addEventListener(ev,teaseEscape,{passive:false}));
 document.getElementById('fakeNo').addEventListener('click',()=>{teaseMsg.textContent='Não vale escolher NÃO só porque o SIM fugiu 😂';});
 unlockStory.addEventListener('click',()=>go('story'));
